@@ -61,5 +61,16 @@ RENAME COLUMN body TO content
 ALTER TABLE tasks
 RENAME TO user_tasks
 
+
+-- -----------------------------------/
+ALTER TABLE "users"
+ADD COLUMN "weight" numeric(4,1);
+
+UPDATE "users"
+SET "weight"=("height" - 1)*100;
+
+ALTER TABLE "users"
+ALTER COLUMN "weight" SET NOT NULL;
+
 SELECT *
-FROM user_tasks;
+FROM users;
