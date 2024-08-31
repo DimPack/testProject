@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS "contents"(
 CREATE TABLE IF NOT EXISTS "reactions"(
   "nameContent" INT REFERENCES "contents"("id"),
   "userId" INT REFERENCES "users"("id"),
-  "isLiked" BOOLEAN NOT NULL
+  "isLiked" BOOLEAN NOT NULL,
   PRIMARY KEY ("nameContent", "userId")
 );
 
