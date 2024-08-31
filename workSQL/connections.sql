@@ -14,10 +14,12 @@ CREATE TABLE IF NOT EXISTS "reactions"(
   "nameContent" INT REFERENCES "contents"("id"),
   "userId" INT REFERENCES "users"("id"),
   "isLiked" BOOLEAN NOT NULL
+  PRIMARY KEY ("nameContent", "userId")
 );
 
 CREATE TABLE IF NOT EXISTS "comments"(
-  "body" VARCHAR,
+  "id" serial PRIMARY KEY,
+  "body" text,
   "userId" INT REFERENCES "users"("id"),
   "nameContent" INT REFERENCES "contents"("id")
 );
