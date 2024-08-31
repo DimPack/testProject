@@ -4,7 +4,7 @@ CREATE TABLE tasks(
     body varchar(256) NOT NULL,
     user_id int REFERENCES users(id),
     deadline timestamp,
-    status task_status
+    status task_status DEFAULT 'pending'
 );
 INSERT INTO tasks(body, user_id, deadline)
 VALUES ('body1', 1, '2024-08-26'),
