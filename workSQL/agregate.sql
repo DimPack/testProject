@@ -89,4 +89,4 @@ GROUP BY "userId";
 SELECT count(*), brand
 FROM phones
 WHERE brand ILIKE 's%'
-GROUP BY brand;
+GROUP BY brand;   
